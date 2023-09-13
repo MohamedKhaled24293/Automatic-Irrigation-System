@@ -22,6 +22,8 @@ public class PlotsOfLandController {
     @Autowired
     PlotsOfLandServiceImpl plotsOfLandServiceImpl;
 
+
+    //The URI indicates the API path to save a PlotsOfLand
     @PostMapping("/save")
     public ResponseEntity<Response> save(@RequestBody PlotsOfLandDto plotsOfLandDto) throws IOException {
 
@@ -35,6 +37,7 @@ public class PlotsOfLandController {
                         .build()
         );
     }
+    //The URI indicates the API path to update a PlotsOfLand
     @PutMapping("/update/{id}")
     public ResponseEntity<Response> update(@RequestBody PlotsOfLandDto plotsOfLandDto, @PathVariable(name = "id") Long id) throws IOException {
 
@@ -49,6 +52,7 @@ public class PlotsOfLandController {
         );
     }
 
+    //The URI indicates the API path to list a PlotsOfLands
     @GetMapping("/plotLandList")
     public ResponseEntity<Response> List() throws IOException {
 
@@ -62,6 +66,7 @@ public class PlotsOfLandController {
                         .build()
         );
     }
+    //The URI indicates the API path to config a PlotsOfLand
     @PutMapping("/configure/{plotOfLandId}/{slotOfTimeId}")
     public ResponseEntity<Response> configPlotOfLand(@PathVariable(name ="plotOfLandId") Long plotOfLandId , @PathVariable(name = "slotOfTimeId")  Long slotOfTimeId){
         return ResponseEntity.ok(

@@ -32,8 +32,9 @@ public class SlotsOfTimeServiceImpl implements SlotsOfTimeService {
     @Override
     public List<SlotsOfTimeDto> slotsOfTimeList() {
         log.info("Listing PlotOfLands ..");
+        List <SlotsOfTime> SlotsOfTimeList =slotsOfTimeRepo.findAll();
+        return SlotsOfTimeList.stream().map(slots -> mapToDto(slots)).collect(Collectors.toList());
 
-        return (List<SlotsOfTimeDto>) mapToDto((SlotsOfTime) slotsOfTimeRepo.findAll());
     }
 
     @Override

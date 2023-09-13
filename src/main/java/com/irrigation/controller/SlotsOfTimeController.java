@@ -21,7 +21,7 @@ import static java.time.LocalDateTime.now;
 public class SlotsOfTimeController {
         @Autowired
         SlotsOfTimeServiceImpl slotsOfTimeServiceImpl;
-
+    //The URI indicates the API path to save a SlotsOfTime
         @PostMapping("/save")
         public ResponseEntity<Response> save(@RequestBody SlotsOfTimeDto slotsOfTimeDto) throws IOException {
 
@@ -35,6 +35,7 @@ public class SlotsOfTimeController {
                             .build()
             );
         }
+    //The URI indicates the API path to update SlotsOfTime by id
         @PutMapping("/update/{id}")
         public ResponseEntity<Response> update(@RequestBody SlotsOfTimeDto slotsOfTimeDto, @PathVariable(name = "id") Long id) throws IOException {
 
@@ -48,7 +49,7 @@ public class SlotsOfTimeController {
                             .build()
             );
         }
-
+    //The URI indicates the API path to list SlotsOfTimes
         @GetMapping("/plotLandList")
         public ResponseEntity<Response> List() throws IOException {
 

@@ -10,6 +10,8 @@ public class ResourceNotFoundException extends RuntimeException{
     private String resourceName;
     private String fieldName;
     private long fieldValue;
+    //making a customized Exception for resource not found
+
     public ResourceNotFoundException(String resourceName, String fieldName, long fieldValue) {
         super(String.format("%s not found with %s : '%s'",resourceName,fieldName,fieldValue));
         //Post not found id : 1
